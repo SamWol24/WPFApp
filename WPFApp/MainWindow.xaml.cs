@@ -20,5 +20,23 @@ namespace WPFApp
         {
             InitializeComponent();
         }
+        void CreateTask()
+        {
+            Task T;
+            // ¿que es un delegado? Apuntador de funciones.
+            // poe ejemplo: Ation (No devuelve valores) y Func (Devuelve Valores)
+            Action Code = new Action(ShowMesage);
+            T = new Task(Code);
+            Task T2 = new Task(delegate
+            {
+                MessageBox.Show("Ejecutando el metodo anonimo.");
+            }
+            );
+        }
+        void ShowMesage()
+        {
+            MessageBox.Show("Ejecutando el metodo ShowMessege");
+        }
+        
     }
 }
