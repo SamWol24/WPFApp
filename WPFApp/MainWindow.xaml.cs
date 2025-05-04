@@ -32,6 +32,7 @@ namespace WPFApp
                 MessageBox.Show("Ejecutando el metodo anonimo.");
             }
             );
+            Task T3A = new Task(ShowMesage);
             Task T3 = new Task(
                 () => ShowMesage());
 
@@ -48,6 +49,9 @@ namespace WPFApp
                 MessageBox.Show($"Tarea 5. Fecha Calculada: {StartDate}");
             }
             );
+            Task T6 = new Task((message) =>
+                MessageBox.Show(message.ToString()), "Expresion Lambda con parametros.");
+
         }
         
         void ShowMesage()
